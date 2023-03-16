@@ -35,8 +35,8 @@ const Button = ({
                 ${secondary ? 'text-black' : 'text-white'}
                 ${secondary ? 'border-black' : 'border-sky-500'}
                 ${large ? 'text-xl' : 'text-md'}
-                ${large ? 'px-5' : 'px-4'}
-                ${large ? 'py-3' : 'py-2'}
+                ${large ? 'px-4' : 'px-3'}
+                ${large ? 'py-2' : 'py-1'}
                 ${outline ? 'bg-transparent' : ''}
                 ${outline ? 'border-white' : ''}
                 ${outline ? 'text-white' : ''}
