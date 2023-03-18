@@ -22,12 +22,12 @@ export default async function handler(
             return res.status(200).json(post);
         }
         if (req.method == 'GET') {
-            const { userId } = req.query
+            const { userId } = req.query;
             let posts;
             if (userId && typeof userId == 'string') {
                 posts = await prisma.post.findMany({
                     where: {
-                        userId
+                        userId: userId
                     },
                     include: {
                         user: true,
@@ -35,8 +35,8 @@ export default async function handler(
                     },
                     orderBy: {
                         createdAt: 'desc'
-                    }
-                })
+                    },
+                });
             } else {
                 posts = await prisma.post.findMany({
                     include: {

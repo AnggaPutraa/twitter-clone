@@ -6,7 +6,8 @@ interface PostFeedProps {
 }
 
 const PostFeed = ({ userId }: PostFeedProps) => {
-    const { data: posts = [] } = usePosts();
+    console.log(userId);
+    const { data: posts = [] } = usePosts(userId);
     console.log(posts);
     return (
         <>
