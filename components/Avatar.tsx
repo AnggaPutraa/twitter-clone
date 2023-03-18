@@ -18,7 +18,7 @@ const Avatar = ({
     const { data: fetchUser } = useUser(userId);
     const handleClick = useCallback((event: any) => {
         event.stopPropagation();
-        const url = `/user/${userId}`;
+        const url = `/users/${userId}`;
         router.push(url);
     }, [router, userId]);
     return (
