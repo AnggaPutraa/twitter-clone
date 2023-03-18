@@ -40,7 +40,7 @@ const Form = ({ placeholder, isComment, postId }: FormProps) => {
     }, [body, mutatePost]);
 
     return (
-        <div className="border-b-[1px] border-neutral-800 px-5 py-2">
+        <div className="border-b-[1px] border-neutral-800 px-5 pt-4 pb-2">
             {currentUser ? (
                 <div className="flex flex-row gap-4">
                     <Avatar userId={currentUser?.id} />
