@@ -62,6 +62,17 @@ const UserBio = ({ userId }: UserBioProps) => {
                         <p className='text-white'>
                             {fecthedUser?.followingId?.length}
                         </p>
+                        <p className='text-neutral-500'>
+                            Following
+                        </p>
+                    </div>
+                    <div className='flex flex-row items-center gap-1'>
+                        <p className='text-white'>
+                            {fecthedUser?.followersCount || 0}
+                        </p>
+                        <p className='text-neutral-500'>
+                            Follower
+                        </p>
                     </div>
                 </div>
             </div>
