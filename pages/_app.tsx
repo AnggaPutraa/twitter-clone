@@ -8,9 +8,24 @@ import { SessionProvider } from 'next-auth/react'
 import EditModal from '@/components/modals/EditModal'
 
 export default function App({ Component, pageProps }: AppProps) {
+  const toastStyleOptions = {
+    style: {
+      color: 'white',
+    },
+    success: {
+      style: {
+        background: '#171717',
+      },
+    },
+    error: {
+      style: {
+        background: '#171717',
+      },
+    },
+  }
   return (
     <SessionProvider session={pageProps.session}>
-      <Toaster />
+      <Toaster toastOptions={toastStyleOptions} />
       <EditModal />
       <LoginModal />
       <RegisterModal />
