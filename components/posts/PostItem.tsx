@@ -22,7 +22,7 @@ const PostItem = ({ userId, data }: PostItemProps) => {
     }, [router, data.user.id]);
 
     const handleNavigateToPost = useCallback(() => {
-        router.push(`/post/${data.id}`)
+        router.push(`/posts/${data.id}`)
     }, [router, data.id]);
 
     const handleLike = useCallback((event: any) => {
