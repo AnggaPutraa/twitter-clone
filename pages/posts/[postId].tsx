@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import CommentFeed from "@/components/posts/CommentFeed";
 import PostItem from "@/components/posts/PostItem";
 import usePost from "@/hooks/usePost";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { ClipLoader } from "react-spinners";
 
@@ -21,6 +22,9 @@ const PostView = () => {
 
     return (
         <>
+            <Head>
+                <title>Post</title>
+            </Head>
             <Header label="Tweet" showBackArrow />
             <PostItem data={fetchedPost} />
             <Form

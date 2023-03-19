@@ -3,6 +3,7 @@ import PostFeed from "@/components/posts/PostFeed";
 import UserBio from "@/components/users/UserBio";
 import UserHero from "@/components/users/UserHero";
 import useUser from "@/hooks/useUser";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { ClipLoader } from "react-spinners";
 
@@ -21,6 +22,9 @@ const UserView = () => {
 
     return (
         <>
+            <Head>
+                <title>Profile</title>
+            </Head>
             <Header
                 label={fecthedUser?.name}
                 showBackArrow

@@ -36,7 +36,7 @@ const ImageUpload = ({
         onDrop: handleDrop,
         disabled,
         accept: {
-            'image/jpeng': [],
+            'image/jpeg': [],
             'image/png': []
         }
     });
