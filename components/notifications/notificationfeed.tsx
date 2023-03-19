@@ -4,6 +4,7 @@ import { format } from "date-fns";
 import { useEffect, useMemo } from "react";
 import { BsTwitter } from "react-icons/bs";
 import { ClipLoader } from "react-spinners";
+import NotificationItem from "./notificationitem";
 
 const NotificationFeed = () => {
     const { data: currentUser, mutate: mutateCurrentUser } = useCurrentUser();
@@ -29,16 +30,11 @@ const NotificationFeed = () => {
         )
     }
 
-    console.log(fecthedNotifications.createdAt);
-
     return (
         <div className="flex flex-col">
             {fecthedNotifications?.map(
                 (notification: Record<string, any>) => (
-                    <div key={notification.id} className='flex flex-row items-center p-6 gap-4 border-b-[1px] border-neutral-800'>
-                        <BsTwitter color="white" size={32}/>
-                        <p className="text-white">{notification.body}</p>
-                    </div>
+                    <NotificationItem notification={notification} />
                 )
             )}
         </div>
