@@ -23,8 +23,6 @@ const EditModal = () => {
 
 
     useEffect(() => {
-        console.log('Run use effect');
-        console.log(currentUser);
         setProfileImage(currentUser?.profileImage);
         setCoverImage(currentUser?.coverImage);
         setName(currentUser?.name);
