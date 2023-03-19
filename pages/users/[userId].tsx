@@ -19,8 +19,6 @@ const UserView = () => {
         )
     }
 
-    console.log(`userId from user: ${userId}`);
-
     return (
         <>
             <Header
