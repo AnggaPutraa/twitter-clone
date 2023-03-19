@@ -1,5 +1,6 @@
 import useCurrentUser from "@/hooks/useCurrentUser";
 import useLoginModal from "@/hooks/useLoginModal";
+import usePost from "@/hooks/usePost";
 import usePosts from "@/hooks/usePosts";
 import useRegisterModal from "@/hooks/useRegisterModal";
 import axios from "axios";
@@ -18,7 +19,8 @@ const Form = ({ placeholder, isComment, postId }: FormProps) => {
     const registerModal = useRegisterModal();
     const loginModal = useLoginModal();
     const { data: currentUser } = useCurrentUser();
-    const { mutate: mutatePost } = usePosts();
+    const { mutate: mutatePosts } = usePosts();
+    const { mutate: mutatePost } = usePost(postId as string);
 
     const [body, setBody] = useState('');
     const [isLoading, setIsLoading] = useState(false);
@@ -26,10 +28,11 @@ const Form = ({ placeholder, isComment, postId }: FormProps) => {
     const handleSubmit = useCallback(async () => {
         try {
             setIsLoading(true);
-            console.log(body);
-            await axios.post('/api/posts', { body })
-            toast.success('Tweet created');
+            const url = isComment ? `/api/comments?postId=${postId}` : '/api/posts';
+            await axios.post(url, { body });
+            toast.success(isComment ? 'Comment Posted' : 'Tweet created');
             setBody('');
+            mutatePosts();
             mutatePost();
         } catch (error) {
             console.log(error);
@@ -37,7 +40,7 @@ const Form = ({ placeholder, isComment, postId }: FormProps) => {
         } finally {
             setIsLoading(false);
         }
-    }, [body, mutatePost]);
+    }, [body, mutatePosts, mutatePost, isComment, postId]);
 
     return (
         <div className="border-b-[1px] border-neutral-800 px-5 pt-4 pb-2">
