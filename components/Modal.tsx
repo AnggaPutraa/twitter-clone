@@ -29,7 +29,7 @@ const Modal = ({
                 return;
             }
             onClose()
-        }, [disabled, onSubmit]
+        }, [disabled, onClose]
     );
 
     const handleSubmit = useCallback(

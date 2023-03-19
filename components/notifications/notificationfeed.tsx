@@ -34,7 +34,7 @@ const NotificationFeed = () => {
         <div className="flex flex-col">
             {fecthedNotifications?.map(
                 (notification: Record<string, any>) => (
-                    <NotificationItem notification={notification} />
+                    <NotificationItem key={notification.id} notification={notification} />
                 )
             )}
         </div>
