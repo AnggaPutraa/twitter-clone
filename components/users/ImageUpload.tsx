@@ -22,7 +22,7 @@ const ImageUpload = ({
     }, [onChange]);
 
     const handleDrop = useCallback((files: any) => {
-        const file = files[0]
+        const file = files[0];
         const reader = new FileReader();
         reader.onload = (event: any) => {
             setBase64(event.target.result);
@@ -57,7 +57,10 @@ const ImageUpload = ({
                         />
                     </div>
                 ) : (
-                    <p className="text-white cursor-pointer">{label}</p>
+                    <>
+                        <p className="text-white cursor-pointer">{label}</p>
+                        <p className="text-neutral-500 cursor-pointer">Maximum size of 2MB</p>
+                    </>
                 )
             }
         </div>
