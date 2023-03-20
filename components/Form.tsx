@@ -62,7 +62,7 @@ const Form = ({ placeholder, isComment, postId }: FormProps) => {
                         />
                         <div className="mt-4 flex flex-row justify-end">
                             <Button
-                                label="Tweet"
+                                label={isComment ? 'Post' : 'Tweet'}
                                 disable={isLoading || !body}
                                 onClick={handleSubmit}
                             />
