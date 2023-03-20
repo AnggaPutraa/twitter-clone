@@ -31,16 +31,17 @@ const Avatar = ({
         transition
         cursor-pointer
         relative
+        bg-slate-500
         `}>
             <Image
-            fill
-            style={{
-                objectFit: 'cover',
-                borderRadius: '100%'
-            }}
-            alt='Avatar'
-            onClick={handleClick}
-            src={fetchUser?.profileImage || '/images/placeholder.png'}
+                fill
+                style={{
+                    objectFit: 'cover',
+                    borderRadius: '100%'
+                }}
+                alt='Avatar'
+                onClick={handleClick}
+                src={fetchUser?.profileImage || '/images/placeholder.png'}
             />
         </div>
     );

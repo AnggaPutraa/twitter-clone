@@ -70,8 +70,9 @@ const Form = ({ placeholder, isComment, postId }: FormProps) => {
                     </div>
                 </div>
             ) : (
-                <div className="py-8">
-                    <h1 className="text-white text-2xl text-center mb-4 font-bold">Welcome to twitter <span className="italic">clone</span></h1>
+                <div className="py-8 space-y-2">
+                    <h1 className="text-white text-2xl text-center font-bold">Welcome to twitter <span className="italic">clone</span></h1>
+                    <p className="text-neutral-500 text-center px-4">Please be aware that this is not a real Twitter website, but a clone created solely for practice and educational purposes.</p>
                     <div className="flex flex-row  justify-center gap-4">
                         <Button
                             label="Login"
