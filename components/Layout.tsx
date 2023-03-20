@@ -1,5 +1,5 @@
 import React from "react";
-import Followbar from "./layout/Followbar";
+import Peoplebar from "./layout/Peoplebar";
 import Sidebar from "./layout/Sidebar";
 
 interface LayoutProps {
@@ -20,7 +20,7 @@ const Layout = ({ children }: LayoutProps) => {
                     ">
                         {children}
                     </div>
-                    <Followbar />
+                    <Peoplebar />
                 </div>
             </div>
         </main>

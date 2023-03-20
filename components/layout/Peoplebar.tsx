@@ -2,7 +2,7 @@ import useCurrentUser from "@/hooks/useCurrentUser";
 import useUsers from "@/hooks/useUsers";
 import Avatar from "../Avatar";
 
-const Followbar = () => {
+const Peoplebar = () => {
     const { data: users = [] } = useUsers();
     const { data: currentUser } = useCurrentUser();
 
@@ -13,7 +13,7 @@ const Followbar = () => {
     return (
         <div className="px-6 py-4 hidden lg:block">
             <div className="border border-neutral-800 rounded-xl p-4">
-                <h2 className="text-white text-lg font-semibold">Who to follow</h2>
+                <h2 className="text-white text-lg font-semibold">See other people</h2>
                 <div className="flex flex-col gap-6 mt-4">
                     {users.map(
                         (user: Record<string, any>) => (
@@ -40,4 +40,4 @@ const Followbar = () => {
     );
 }
 
-export default Followbar;
+export default Peoplebar;
