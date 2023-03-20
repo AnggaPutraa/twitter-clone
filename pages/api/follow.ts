@@ -34,7 +34,7 @@ export default async function handler(
                     await prisma.notification.create({
                         data: {
                             userId,
-                            body: 'Someone followed you!'
+                            body: `${currentUser?.username} followed you!`
                         }
                     });
                     await prisma.user.update({
