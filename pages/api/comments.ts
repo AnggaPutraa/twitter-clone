@@ -31,7 +31,7 @@ export default async function handler(
                     id: postId
                 }
             });
-            if (post?.userId) {
+            if (post?.userId && post?.userId != currentUser?.id) {
                 await prisma.notification.create({
                     data: {
                         userId: post.userId,
