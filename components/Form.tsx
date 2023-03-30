@@ -18,7 +18,7 @@ interface FormProps {
 const Form = ({ placeholder, isComment, postId }: FormProps) => {
     const registerModal = useRegisterModal();
     const loginModal = useLoginModal();
-    const { data: currentUser } = useCurrentUser();
+    const { data: currentUser, isLoading:currentUserIsLoading } = useCurrentUser();
     const { mutate: mutatePosts } = usePosts();
     const { mutate: mutatePost } = usePost(postId as string);
 
@@ -41,6 +41,12 @@ const Form = ({ placeholder, isComment, postId }: FormProps) => {
             setIsLoading(false);
         }
     }, [body, mutatePosts, mutatePost, isComment, postId]);
+
+    if (currentUserIsLoading) {
+        return (
+            <div></div>
+        );
+    }
 
     return (
         <div className="border-b-[1px] border-neutral-800 px-5 py-4">
