@@ -11,4 +11,4 @@ This is a full stack application built using the latest technologies to replicat
 - **Prisma**: Chosen ORM for simplified and intuitive database interactions, offering type-safe APIs for data management and querying.
 - **Zustand**: Lightweight state management library for efficient global state management, ensuring smooth and reactive user interfaces.
 - **SWR**: Integration of SWR for enhanced data fetching, utilizing stateful caching and revalidation to ensure up-to-date information for users.
-- **MongoDB**: Serves as the database for GoStay, providing a scalable and flexible solution for storing data.
+- **MongoDB**: Serves as the database for this app, providing a scalable and flexible solution for storing data.
